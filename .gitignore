@@ -1,0 +1,22 @@
+# Dependencies (none today; kept so an accidental install is never committed)
+node_modules/
+
+# Secrets and local environment
+.env
+.env.*
+
+# Editor, IDE and assistant state
+.claude/
+.mcp.json
+.idea/
+.vscode/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and backups
+*.log
+*.bak
+*.bak-*

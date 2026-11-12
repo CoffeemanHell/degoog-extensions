@@ -1,0 +1,240 @@
+/*
+ * EmuCompat slot.
+ * Every class is scoped with the ps3- prefix; colours come from degoog's CSS variables
+ * (https://degoog-org.github.io/docs/developer-styling.html) so light/dark themes just work.
+ */
+
+.ps3-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  max-width: 100%;
+  color: var(--text-primary);
+}
+
+.ps3-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.ps3-cover {
+  display: block;
+  flex: none;
+  width: 120px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  background: var(--bg-light);
+}
+
+.ps3-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.ps3-kicker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.ps3-id {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.ps3-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text-primary);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.ps3-name:hover,
+.ps3-name:focus-visible {
+  text-decoration: underline;
+}
+
+/* Detail rows */
+
+.ps3-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin: 0;
+}
+
+.ps3-detail {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.ps3-label {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--text-secondary);
+}
+
+.ps3-value {
+  margin: 0;
+  font-size: 0.95rem;
+  overflow-wrap: anywhere;
+}
+
+/*
+ * Compatibility status: one modifier per level, shared by RPCS3 / PCSX2 / ShadPS4.
+ * The level colour lives in --ps3-tone so the same colour can be re-applied to links,
+ * which would otherwise take degoog's global link colour (blue), including :visited.
+ */
+
+.ps3-compat {
+  --ps3-tone: var(--text-secondary);
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--ps3-tone);
+}
+
+.ps3-compat--unknown { --ps3-tone: var(--text-secondary); }
+.ps3-compat--nothing,
+.ps3-compat--loadable { --ps3-tone: var(--danger, #ef4444); }
+.ps3-compat--intro,
+.ps3-compat--boots { --ps3-tone: #f97316; }
+.ps3-compat--menus { --ps3-tone: var(--warning, #eab308); }
+.ps3-compat--ingame { --ps3-tone: #a3e635; }
+.ps3-compat--playable { --ps3-tone: var(--success, #22c55e); }
+.ps3-compat--perfect { --ps3-tone: #a855f7; }
+
+.ps3-card .ps3-detail a.ps3-compat,
+.ps3-card .ps3-detail a.ps3-compat:visited,
+.ps3-card .ps3-detail a.ps3-compat:hover,
+.ps3-card .ps3-detail a.ps3-compat:focus-visible {
+  color: var(--ps3-tone);
+}
+
+.ps3-card .ps3-detail a.ps3-compat:hover,
+.ps3-card .ps3-detail a.ps3-compat:focus-visible {
+  text-decoration: underline;
+}
+
+/* Region badge (also carries degoog's generic .degoog-badge class) */
+
+.ps3-region {
+  flex: none;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* Several title IDs in one query: cards are stacked */
+
+.ps3-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.ps3-stack > .ps3-card + .ps3-card {
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+/* Name search results: one row per title ID */
+
+.ps3-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ps3-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.6rem;
+  min-width: 0;
+}
+
+.ps3-row .ps3-id {
+  font-size: 0.8rem;
+}
+
+.ps3-row-name {
+  flex: 1 1 12rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.ps3-card .ps3-row a.ps3-row-name,
+.ps3-card .ps3-row a.ps3-row-name:visited {
+  color: var(--text-primary);
+}
+
+.ps3-card .ps3-row a.ps3-row-name:hover,
+.ps3-card .ps3-row a.ps3-row-name:focus-visible {
+  text-decoration: underline;
+}
+
+.ps3-hint {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Description and footer link */
+
+.ps3-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  margin: 0.35rem 0 0;
+  overflow: hidden;
+  line-height: 1.4;
+  color: var(--text-snippet, var(--text-secondary));
+}
+
+.ps3-more {
+  align-self: flex-start;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.ps3-more:hover,
+.ps3-more:focus-visible {
+  color: var(--text-primary);
+  text-decoration: underline;
+}
+
+.ps3-more i {
+  font-size: 0.75em;
+}
+
+@media (max-width: 480px) {
+  .ps3-name { font-size: 1.15rem; }
+  .ps3-cover { width: 90px; height: 128px; }
+}

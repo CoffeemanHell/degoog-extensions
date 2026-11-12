@@ -1,0 +1,20 @@
+{
+  "name": "degoog-extensions",
+  "description": "PlayStation 2, 3 and 4 title ID lookup for degoog search.",
+  "author": "coffee",
+  "license": "AGPL-3.0-only",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/emu-compat.test.mjs"
+  },
+  "plugins": [
+    {
+      "path": "plugins/emu-compat",
+      "name": "EmuCompat",
+      "description": "Looks up PS2, PS3 and PS4 title IDs: game name, emulator compatibility, latest PS3 patch version and cover art. Adds the !emu command.",
+      "version": "1.1.1",
+      "type": "slot"
+    }
+  ]
+}

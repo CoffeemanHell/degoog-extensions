@@ -1,0 +1,83 @@
+{
+  "emu-compat-slot": {
+    "name": "EmuCompat",
+    "description": "Looks up PlayStation 2, 3 and 4 title IDs and shows the game name, emulator compatibility (PCSX2, RPCS3, ShadPS4), the latest PS3 patch version and SteamGridDB cover art.",
+    "settings": {
+      "showCover": {
+        "label": "Show cover art",
+        "description": "Show the game's cover art from SteamGridDB. Requires an API key."
+      },
+      "steamGridDbApiKey": {
+        "label": "SteamGridDB API key",
+        "description": "Required for cover art. Cover art stays disabled while this is empty."
+      },
+      "showDescription": {
+        "label": "Show Wikipedia description",
+        "description": "Show the short Wikipedia summary for the title."
+      },
+      "showDetails": {
+        "label": "Show details",
+        "description": "List the detail rows (compatibility, version) below the title."
+      },
+      "showCompatibility": {
+        "label": "Show RPCS3 / ShadPS4 compatibility",
+        "description": "Look up PS3 titles in the RPCS3 database and PS4 titles in the ShadPS4 database."
+      },
+      "showCompat": {
+        "label": "Show PCSX2 compatibility",
+        "description": "Show the PCSX2 compatibility rating for PS2 titles."
+      },
+      "showVersion": {
+        "label": "Show version",
+        "description": "Show the latest PS3 update version. Sony's update server is only contacted while this is on."
+      },
+      "showRegion": {
+        "label": "Show region badge",
+        "description": "Show the release region (US, EU, JP, ...) next to the title ID."
+      }
+    }
+  },
+  "plugin-emu-compat": {
+    "platform": {
+      "ps2": "PlayStation 2",
+      "ps3": "PlayStation 3",
+      "ps4": "PlayStation 4"
+    },
+    "viewPage": "Read more",
+    "labels": {
+      "version": "Latest version",
+      "compatibilityRpcs3": "RPCS3 compatibility",
+      "compatibilityPcsx2": "PCSX2 compatibility",
+      "compatibilityShadps4": "ShadPS4 compatibility"
+    },
+    "compat": {
+      "unknown": "Unknown",
+      "nothing": "Nothing",
+      "loadable": "Loadable",
+      "intro": "Intro",
+      "boots": "Boots",
+      "menus": "Menus",
+      "ingame": "In-Game",
+      "playable": "Playable",
+      "perfect": "Perfect"
+    },
+    "region": {
+      "us": "US",
+      "eu": "EU",
+      "jp": "JP",
+      "kr": "KR",
+      "asia": "Asia"
+    },
+    "nameSearch": {
+      "heading": "Matching title IDs",
+      "hint": "Use a title ID with the same command to see its details.",
+      "empty": "No titles found for",
+      "usage": "Type a game name or a title ID after the command, for example",
+      "narrow": "Add ps2, ps3 or ps4 to search a single platform, for example"
+    }
+  },
+  "emu-compat-command": {
+    "name": "PlayStation Emulation Lookup",
+    "description": "Search PS2, PS3 and PS4 games by name or title ID. Add ps2, ps3 or ps4 to narrow it down."
+  }
+}

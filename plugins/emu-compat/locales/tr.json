@@ -1,0 +1,83 @@
+{
+  "emu-compat-slot": {
+    "name": "EmuCompat",
+    "description": "PlayStation 2, 3 ve 4 oyun kimliklerini arar; oyunun adını, emülatör uyumluluğunu (PCSX2, RPCS3, ShadPS4), en son PS3 yama sürümünü ve SteamGridDB kapak görselini gösterir.",
+    "settings": {
+      "showCover": {
+        "label": "Kapak görselini göster",
+        "description": "Oyunun kapak görselini SteamGridDB'den gösterir. API anahtarı gerekir."
+      },
+      "steamGridDbApiKey": {
+        "label": "SteamGridDB API anahtarı",
+        "description": "Kapak görseli için gereklidir. Boş bırakılırsa kapak görseli gösterilmez."
+      },
+      "showDescription": {
+        "label": "Wikipedia açıklamasını göster",
+        "description": "Oyunun kısa Wikipedia özetini gösterir."
+      },
+      "showDetails": {
+        "label": "Ayrıntıları göster",
+        "description": "Ayrıntı satırlarını (uyumluluk, sürüm) oyun adının altında listeler."
+      },
+      "showCompatibility": {
+        "label": "RPCS3 / ShadPS4 uyumluluğunu göster",
+        "description": "PS3 oyunlarını RPCS3 veritabanında, PS4 oyunlarını ShadPS4 veritabanında arar."
+      },
+      "showCompat": {
+        "label": "PCSX2 uyumluluğunu göster",
+        "description": "PS2 oyunları için PCSX2 uyumluluk derecesini gösterir."
+      },
+      "showVersion": {
+        "label": "Sürümü göster",
+        "description": "En son PS3 güncelleme sürümünü gösterir. Sony'nin güncelleme sunucusuna yalnızca bu ayar açıkken bağlanılır."
+      },
+      "showRegion": {
+        "label": "Bölge rozetini göster",
+        "description": "Oyun kimliğinin yanında çıkış bölgesini (ABD, Avrupa, Japonya, ...) gösterir."
+      }
+    }
+  },
+  "plugin-emu-compat": {
+    "platform": {
+      "ps2": "PlayStation 2",
+      "ps3": "PlayStation 3",
+      "ps4": "PlayStation 4"
+    },
+    "viewPage": "Devamını oku",
+    "labels": {
+      "version": "En son sürüm",
+      "compatibilityRpcs3": "RPCS3 uyumluluğu",
+      "compatibilityPcsx2": "PCSX2 uyumluluğu",
+      "compatibilityShadps4": "ShadPS4 uyumluluğu"
+    },
+    "compat": {
+      "unknown": "Bilinmiyor",
+      "nothing": "Açılmıyor",
+      "loadable": "Yükleniyor",
+      "intro": "Giriş",
+      "boots": "Başlıyor",
+      "menus": "Menüler",
+      "ingame": "Oyun içi",
+      "playable": "Oynanabilir",
+      "perfect": "Kusursuz"
+    },
+    "region": {
+      "us": "ABD",
+      "eu": "Avrupa",
+      "jp": "Japonya",
+      "kr": "Kore",
+      "asia": "Asya"
+    },
+    "nameSearch": {
+      "heading": "Eşleşen oyun kimlikleri",
+      "hint": "Ayrıntıları görmek için aynı komutu bir oyun kimliğiyle kullan.",
+      "empty": "Şunun için oyun bulunamadı:",
+      "usage": "Komuttan sonra bir oyun adı veya oyun kimliği yaz, örneğin",
+      "narrow": "Tek bir platformda aramak için ps2, ps3 veya ps4 ekle, örneğin"
+    }
+  },
+  "emu-compat-command": {
+    "name": "PlayStation Emülasyon Araması",
+    "description": "PS2, PS3 ve PS4 oyunlarını ada veya oyun kimliğine göre arar. Daraltmak için ps2, ps3 veya ps4 ekle."
+  }
+}
