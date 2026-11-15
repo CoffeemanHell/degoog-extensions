@@ -1,0 +1,20 @@
+{
+  "name": "degoog-extensions",
+  "description": "PC and PlayStation 2, 3 and 4 game lookup for degoog search.",
+  "author": "coffee",
+  "license": "AGPL-3.0-only",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/emu-compat.test.mjs"
+  },
+  "plugins": [
+    {
+      "path": "plugins/emu-compat",
+      "name": "EmuCompat",
+      "description": "Looks up PS2, PS3 and PS4 title IDs and PC games: emulator compatibility, latest PS3 patch version, Steam and ProtonDB details, GOG links and cover art. Adds the !game command.",
+      "version": "1.2.0",
+      "type": "slot"
+    }
+  ]
+}
